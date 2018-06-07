@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变换框demo</title>
+    <style>
+
+        #div4{
+            z-index: 1;
+            opcity: 0;
+            width: 1800px;
+            height: 900px;
+
+        }
+        #div1{
+            position: relative;
+        }
+        #div1 p {
+            color: black;
+            font: 30px bold;
+            display: inline-block;
+        }
+        #div1 input {
+            background-color: red;
+            color: white;
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+        }
+        #div2 {
+            border: 6px black solid;
+            width: 100px;
+            height: 100px;
+        }
+        #div3{
+            border: 15px grey solid;
+            width: 400px;
+            height: 220px ;
+            line-height: 50px;
+            text-align: center;
+            padding-top: 20px ;
+            position: absolute;
+            top: 300px;
+            left: 800px;
+            display: none;
+            z-index: 2;
+            background-color: white;
+        }
+
+        #btn2 input{
+            color: white;
+            background-color: limegreen;
+            display: inline-block;
+            width: 50px;
+            height: 40px;
+        }
+        #btn2 :hover{
+            color: black;
+            background-color: red ;
+            border: black 1px solid;
+
+        }
+
+        #btn3 input{
+            color: white;
+            background-color: orange;
+            display: inline-block;
+            width: 50px;
+            height: 40px;
+        }
+        #btn3 :hover{
+            color: black;
+            background-color: yellow ;
+            border: black 1px solid;
+        }
+
+        #btn4 input{
+            color: white;
+            background-color: blue;
+            display: inline-block;
+            width: 50px;
+            height: 40px;
+        }
+        #btn4 :hover{
+            color: black;
+            background-color: dodgerblue ;
+            border: black 1px solid;
+        }
+
+        .btn4 input{
+            color: dimgrey;
+            background-color: darkgrey;
+            border: 1px solid darkgrey;
+            display: inline-block;
+            width: 50px;
+            height: 40px;
+        }
+
+        .btn4 a :hover{
+            background-color: orange;
+            color: black;
+            border: 1px solid black;
+        }
+        .btn5 input{
+            display: inline-block;
+            width: 70px;
+            height: 40px;
+            color: white;
+            background-color: midnightblue;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            var  btn1= document.getElementById("btn1");
+            var  btn2= document.getElementById("btn2");
+            var  btn3= document.getElementById("btn3");
+            var  btn4= document.getElementById("btn4");
+            var  btn5= document.getElementById("btn5");
+            var  btn6= document.getElementById("btn6");
+            var  btn7= document.getElementById("btn7");
+            var  btn8= document.getElementById("btn8");
+            var  btn9= document.getElementById("btn9");
+            var  btn10= document.getElementById("btn10");
+            var  btn11= document.getElementById("btn11");
+            var  btn12= document.getElementById("btn12");
+
+
+            var div2 = document.getElementById("div2");
+            var div3 = document.getElementById("div3");
+            var div4 = document.getElementById("div4");
+            var body = document.getElementsByName("body")[0];
+
+            btn1.onclick = show;
+            
+            function show() {
+                div3.style.display = "block";
+                div4.style.backgroundColor ="grey";
+                div4.style.opacity = 0.5;
+
+            }
+
+            btn2.onclick = function () {
+                div2.style.backgroundColor = "red";
+            }
+            btn3.onclick = function () {
+                div2.style.backgroundColor = "yellow";
+            }
+            btn4.onclick = function () {
+                div2.style.backgroundColor = "blue";
+            }
+
+            btn5.onclick = function () {
+                div2.style.width = "200px";
+            }
+            btn6.onclick = function () {
+                div2.style.width = "300px";
+            }
+            btn7.onclick = function () {
+                div2.style.width = "400px";
+            }
+
+            btn8.onclick = function () {
+                div2.style.height = "200px";
+            }
+            btn9.onclick = function () {
+                div2.style.height = "300px";
+            }
+            btn10.onclick = function () {
+                div2.style.height = "400px";
+            }
+            btn11.onclick = function () {
+                div2.style.height= "100px";
+                div2.style.width ="100px";
+                div2.style.backgroundColor ="white";
+            }
+            btn12.onclick = function () {
+                div3.style.display = "none";
+                div4.style.backgroundColor ="white";
+                div4.style.opacity = 1;
+            }
+        }
+    </script>
+</head>
+<body>
+   <div id="div4">
+    <div id="div1">
+        <p>请为下面的DIV设置样式：</p>
+        <input type="button" value="点击设置" id="btn1">
+    </div>
+    <div id="div2"></div>
+   </div>
+   <div id="div3">
+        <div>请选择背景色：
+            <a id="btn2"><input type="button" value="红" ></a>
+            <a id="btn3"><input type="button" value="黄" ></a>
+            <a id="btn4"><input type="button" value="蓝" ></a>
+        </div>
+        <div class="btn4">请选择宽(px)：
+           <a id="btn5"><input type="button" value="200" class="btn2"></a>
+           <a id="btn6"><input type="button" value="300" class="btn2"></a>
+            <a id="btn7"><input type="button" value="400" class="btn2"></a>
+        </div>
+        <div class="btn4">请选择高(px)：
+            <a id="btn8"><input type="button" value="200" class="btn2"></a>
+            <a id="btn9"><input type="button" value="300" class="btn2"></a>
+            <a id="btn10"><input type="button" value="400" class="btn2"></a>
+        </div>
+        <div class="btn5">
+            <input type="button" value="恢复" id="btn11">
+            <input type="button" value="确定" id="btn12">
+
+        </div>
+    </div>
+</body>
+</html>

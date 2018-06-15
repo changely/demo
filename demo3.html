@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{ width: auto ;position: relative; display: inline-block; height: 90px}
+        div{ width: 50px;height: 50px;background-color: red; position: absolute;
+            top:0; left: 0; font-size: 20px; color: white;text-align: center;line-height: 50px}
+    </style>
+</head>
+<body>
+<input type="button" value="自动生成一个V字型">
+<script>
+    window.onload =function () {
+        var oBtn = document.getElementsByTagName('input')[0];
+        oBtn.onclick =function () {
+            var aDiv = document.getElementsByTagName('div');
+            var str='';
+            for(var i=0; i<9;i++){
+                str += '<div>'+i+'</div>';
+            }
+            document.body.innerHTML += str;
+            var len = aDiv.length ;
+            for(var i=0;i<len;i++){
+                if(i<len/2){
+                    aDiv[i].style.left = 30 + i*50 + 'px';
+                    aDiv[i].style.top = 30 + i*50 + 'px';
+                }else {
+                    aDiv[i].style.left = 30 + i*50 + 'px';
+                    aDiv[i].style.top = 30 + (len-1-i)*50 + 'px';
+
+                }
+
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
